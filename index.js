@@ -6,7 +6,7 @@ const prefix = ("=");
 
 bot.on('ready', function () {
     console.log("Je reprend les bonnes choses!")
-    bot.user.setActivity('Je m\'occupe').catch(console.error)
+    bot.user.setActivity('m\'occuper').catch(console.error)
 });
 
 bot.on('guildMemberAdd', member => {
