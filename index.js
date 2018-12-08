@@ -1,18 +1,18 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
-const cfg =require('./index.json');
-const token = process.env.token; 
-const prefix = ("=");
+const cfg =require('./index.json'); 
+const token = process.env.token 
+const prefix = ("!!");
 
 bot.on('ready', function () {
     console.log("Je reprend les bonnes choses!")
-    bot.user.setActivity('m\'occuper').catch(console.error)
+    bot.user.setActivity('Je m\'occupe').catch(console.error)
 });
 
 bot.on('guildMemberAdd', member => {
     member.createDM().then(channel => {
         return channel.send('Bienvenue dans la Wayn' + member.displayName +'!')
-        console.log(`${member.displayName} viens de rejoindre le serveur!.`)
+        console.log(`{member.displayName} viens de rejoindre le serveur!.`)
     }).catch(console.error)
 });
 
@@ -34,5 +34,11 @@ bot.on('message', msg => {
 
 });
 
-bot.login(token); 
+clientDiscord.on('messageReactionAdd', (reactio, user) => {
+   if(reaction.emoji.name === ":tools:")
+   clientDiscord.channels.get("520696542974443553").send('Rôle ajouté {member.displayName} :wink: ')
+}
+
+
+bot.login(cfg.token); 
 bot.login(token); 
